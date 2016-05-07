@@ -55,7 +55,10 @@ public class GraficaView extends javax.swing.JFrame {
         // Fuente de Datos
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
         for(OperacionesDiarias op : aux){
-            dataset.setValue(op.getPorcentaje(),operario.getNombre(), op.getFecha());
+            if(op.getListaOperaciones().size()>0){
+                dataset.setValue(op.getPorcentaje(),operario.getNombre(), op.getFecha());
+            }
+            
         }
 
         // Creando el Grafico
