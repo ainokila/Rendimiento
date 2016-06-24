@@ -125,18 +125,25 @@ public class OperarioView extends javax.swing.JPanel {
 
         setBorder(javax.swing.BorderFactory.createTitledBorder("Informacion"));
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setText("Nombre:");
 
+        name.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         name.setText("nombre");
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("Porcentaje TOTAL:");
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setText("Porcentaje DIARIO:");
 
+        porcTotal.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         porcTotal.setText("0%");
 
+        porcDiario.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         porcDiario.setText("0%");
 
+        aniadeOpDiaria.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         aniadeOpDiaria.setText("Añadir Operacion Diaria");
         aniadeOpDiaria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -146,15 +153,18 @@ public class OperarioView extends javax.swing.JPanel {
 
         operacionCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Operacion 1" }));
 
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel4.setText("Operacion :");
 
         repeticiones.setText("0");
 
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel5.setText("Repeticiones :");
 
-        muestraDia.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
+        muestraDia.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         muestraDia.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel6.setText("TIEMPO DIA : ");
 
         tiempoDia.setText("tiempo");
@@ -164,6 +174,7 @@ public class OperarioView extends javax.swing.JPanel {
             }
         });
 
+        actualizaTiempoDia.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         actualizaTiempoDia.setText("ACTUALIZA TIEMPO");
         actualizaTiempoDia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -171,8 +182,10 @@ public class OperarioView extends javax.swing.JPanel {
             }
         });
 
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel7.setText("Fecha :");
 
+        fechaLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         fechaLabel.setText("fecha");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -249,7 +262,7 @@ public class OperarioView extends javax.swing.JPanel {
                     .addComponent(jLabel7)
                     .addComponent(fechaLabel))
                 .addGap(41, 41, 41)
-                .addComponent(muestraDia, javax.swing.GroupLayout.DEFAULT_SIZE, 368, Short.MAX_VALUE)
+                .addComponent(muestraDia, javax.swing.GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(aniadeOpDiaria, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -294,6 +307,7 @@ public class OperarioView extends javax.swing.JPanel {
         }else{
            JOptionPane.showMessageDialog(null, "Introduzca un valor valido"); 
         }
+        repeticiones.setText(null);
        }
         
     }//GEN-LAST:event_aniadeOpDiariaActionPerformed

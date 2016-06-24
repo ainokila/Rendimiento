@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Source;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -19,9 +20,12 @@ import java.util.Map;
  */
 public class Empresa implements Serializable{
        
-    //private static Empresa instance = null;
+   
     private Map<String,Operario> operarios;
     private OperacionesDisponibles operacionesDis;
+    
+    private final String archivo = "//home//invitado//Documentos//Archivos//serial";
+    private final String archivoCopia = "//home//invitado//Documentos//Archivos//serialAnterior.ser";
 
 
 
@@ -34,16 +38,6 @@ public class Empresa implements Serializable{
         operarios = cp.operarios;
         operacionesDis = cp.operacionesDis;
     }
-    /*public static Empresa getInstance(){
-        if(instance == null){
-            instance = new Empresa();
-        }
-        return instance;
-    }
-    
-    private Object readResolve() throws ObjectStreamException{
-        return instance;
-    }*/
     
     public Operario getOperario(String nombre){
         Operario op = new Operario("Operario inexistente");
@@ -77,11 +71,21 @@ public class Empresa implements Serializable{
     public boolean guardar(){
         boolean estado = true;
         try{
-            FileOutputStream fos = new FileOutputStream("//tmp//serial.ser");
+            File fichero = new File(archivo);
+            File fichero2 = new File(archivoCopia);
+ 
+            boolean success = fichero.renameTo(fichero2);
+            
+            if (!success) {
+                System.out.println("Error intentando cambiar el nombre de fichero");
+            }
+            
+            FileOutputStream fos = new FileOutputStream(archivo);
             ObjectOutputStream out = new ObjectOutputStream(fos);
             out.writeObject(this);
             out.close();
             fos.close();
+            
         }catch(IOException e){
             e.printStackTrace();
             estado = false;
@@ -92,11 +96,13 @@ public class Empresa implements Serializable{
     public boolean cargar(){
         boolean estado = true;
         try{
-            FileInputStream fin = new FileInputStream("//tmp//serial.ser");
+            FileInputStream fin = new FileInputStream(archivo);
             ObjectInputStream in = new ObjectInputStream(fin);
             this.copy((Empresa) in.readObject());
             in.close();
             fin.close();
+            File fichero2 = new File(archivoCopia);
+            fichero2.delete();
         }catch(IOException | ClassNotFoundException e){
             e.printStackTrace();
             estado = false;

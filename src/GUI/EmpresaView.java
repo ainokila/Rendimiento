@@ -49,6 +49,8 @@ public class EmpresaView extends javax.swing.JFrame {
                 dialogoGuardar();               
             }
         });
+        operarioView.setVisible(false);
+
         //eliminarOperacionBtn.setVisible(false);
     }
 
@@ -78,10 +80,13 @@ public class EmpresaView extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setText("Operario:");
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("Fecha:");
 
+        buscarBtn.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         buscarBtn.setText("Buscar");
         buscarBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -110,6 +115,7 @@ public class EmpresaView extends javax.swing.JFrame {
             }
         });
 
+        aniadirOperacionBtn.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         aniadirOperacionBtn.setText("Añadir Operacion");
         aniadirOperacionBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -117,6 +123,7 @@ public class EmpresaView extends javax.swing.JFrame {
             }
         });
 
+        eliminarOperarioBtn.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         eliminarOperarioBtn.setText("Eliminar Operario");
         eliminarOperarioBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -124,6 +131,7 @@ public class EmpresaView extends javax.swing.JFrame {
             }
         });
 
+        aniadirOperarioBtn.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         aniadirOperarioBtn.setText("Añadir Operario");
         aniadirOperarioBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -139,6 +147,7 @@ public class EmpresaView extends javax.swing.JFrame {
             }
         });
 
+        eliminarOperacionView.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         eliminarOperacionView.setText("Eliminar Operacion");
         eliminarOperacionView.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -155,11 +164,10 @@ public class EmpresaView extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 961, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 984, Short.MAX_VALUE)
                         .addComponent(cargarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(guardarBtn)
-                        .addGap(34, 34, 34))
+                        .addComponent(guardarBtn))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(operario, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -172,10 +180,10 @@ public class EmpresaView extends javax.swing.JFrame {
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(eliminarOperacionView, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(eliminarOperarioBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(operarioView, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(operarioView, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(4, 4, 4)))
+                .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -186,6 +194,10 @@ public class EmpresaView extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(cargarBtn))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(operarioView, javax.swing.GroupLayout.PREFERRED_SIZE, 638, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(operario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -204,12 +216,8 @@ public class EmpresaView extends javax.swing.JFrame {
                         .addComponent(eliminarOperarioBtn)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(eliminarOperacionView)
-                        .addGap(184, 184, 184)
-                        .addComponent(estadisticasBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(operarioView, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(33, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(estadisticasBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
 
         pack();
@@ -243,6 +251,8 @@ public class EmpresaView extends javax.swing.JFrame {
         AniadirOperacionDisponibleView operacion = new AniadirOperacionDisponibleView(this, true);
         empresa.aniadirOperacionDiaria(operacion.getTipoOperacionNueva());
         this.setEmpresa(empresa);
+        operarioView.setVisible(false);
+
         repaint();
         
     }//GEN-LAST:event_aniadirOperacionBtnActionPerformed
@@ -250,6 +260,8 @@ public class EmpresaView extends javax.swing.JFrame {
     private void eliminarOperarioBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarOperarioBtnActionPerformed
         EliminarOperarioView eliminar = new EliminarOperarioView(this, true ,empresa);
         this.setEmpresa(empresa);
+        operarioView.setVisible(false);
+
         repaint();
     }//GEN-LAST:event_eliminarOperarioBtnActionPerformed
 
@@ -269,6 +281,8 @@ public class EmpresaView extends javax.swing.JFrame {
 
                     empresa.setOperario(new Operario(nombreNuevo));
                     this.setEmpresa(empresa);
+                    operarioView.setVisible(false);
+
                     repaint();
 
         }
@@ -293,6 +307,7 @@ public class EmpresaView extends javax.swing.JFrame {
             
             nuevoBuscado = empresa.getOperario(nombre);
             operarioView.setOpererario(nuevoBuscado, fechaS,empresa);
+            operarioView.setVisible(true);
             
             repaint();
             revalidate();
@@ -317,6 +332,7 @@ public class EmpresaView extends javax.swing.JFrame {
         EliminarOperacionView operacion = new EliminarOperacionView(this, true, empresa);
         this.setEmpresa(empresa);
         this.buscarBtnActionPerformed(evt);
+        operarioView.setVisible(false);
         repaint();
         revalidate();
     }//GEN-LAST:event_eliminarOperacionViewActionPerformed
